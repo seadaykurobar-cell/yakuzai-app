@@ -1,0 +1,301 @@
+/*すべてに適用*/
+/*背景の色*/
+body {
+    background-color: #352570;
+}
+
+.content-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+}
+
+h1 {
+    color: #e9efff;
+    font-size: 2rem;
+    margin-top: 0;
+    border-bottom: 2px solid gold;
+    padding: 5px 15px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #e9efff;
+    border-bottom: 2px solid gold;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    display: inline-block;
+
+}
+
+p.hero.menu {
+    font-size: 1.5rem;
+}
+
+/*タロットカード紹介の説明*/
+/* --- 横並びのレイアウト設定 --- */
+.tarot-layout {
+    display: flex;
+    /* 横並びにする */
+    align-items: flex-start;
+    /* 上揃え */
+    gap: 30px;
+    /* 画像と説明文の間の隙間 */
+    margin-top: 20px;
+}
+
+/* 画像のサイズ調整 */
+.tarot-layout img {
+    max-width: 180px;
+    /* 画像の大きさを指定（お好みで） */
+    height: auto;
+    flex-shrink: 0;
+    /* 画像が潰れないように固定 */
+}
+
+/* スマホ対応：画面が狭いときは縦に並べる */
+@media (max-width: 768px) {
+    .tarot-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tarot-layout img {
+        max-width: 50%;
+        /* スマホでは画像を大きく表示 */
+    }
+}
+
+h4 {
+    color: #e9efff;
+    font-size: 1.3rem;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+
+p {
+    color: #d8e5ff;
+    line-height: 1.6;
+}
+
+.meaning-box {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #fffdf0;
+}
+
+/* 親要素：画像とテキストを横並びにする */
+figure {
+    display: flex;
+    align-items: flex-start;
+    /* 上揃え（中央なら center） */
+    gap: 20px;
+    /* 画像とテキストの間の隙間 */
+}
+
+/* 画像のサイズ調整（任意） */
+figure img {
+    max-width: 300px;
+    /* お好みの幅に */
+    height: auto;
+}
+
+.header-container {
+
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    transition: filter 0.3s ease;
+}
+
+.header-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.header-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: gold;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(0, 13, 255, 0.8);
+    pointer-events: none;
+    white-space: nowrap;
+    font-size: 2.5rem;
+    z-index: 10;
+}
+
+.header-container:hover {
+    filter: brightness(1.1);
+}
+
+#pagetop {
+    position: fixed !important;
+    right: 20px !important;
+    /* 右端から20px */
+    bottom: 20px !important;
+    /* 下端から20px */
+    z-index: 9999 !important;
+
+    /* 以前の 840px や中央寄せを物理的に無効化する設定 */
+    width: auto !important;
+    left: auto !important;
+    /* これが重要：左からの位置を強制解除 */
+    margin: 0 !important;
+    /* margin-left: auto などを解除 */
+    transform: none !important;
+    /* 他の干渉を遮断 */
+}
+
+#pagetop a {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: gold;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none !important;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+#pagetop a,
+#pagetop a:visited {
+    color: gold !important;
+}
+
+/* カード内の画像 */
+.item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    transition: filter 0.3s ease;
+}
+
+/* --- ホバーエフェクト：整理済み --- */
+.item:hover {
+    transform: translateY(-8px) scale(1.05);
+    /* 小さなカードに合わせた浮き上がり */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.05);
+    text-decoration: none;
+}
+
+.item:hover img {
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.item:hover p,
+.item:hover figcaption {
+    color: brown;
+    transition: color 0.3s ease;
+}
+
+
+/* 占いのカードの配置*/
+/* レイアウト補助（カードを横に並べるための親要素） */
+.pic_field {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* これが無いと、カードのサイズが0になり何も見えません */
+#table td {
+    width: 100px;
+    height: 160px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+@media(min-width:992px) {
+    #card-field {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .card-unit {
+        /* 4列にするため、(100% / 4) から余白分を引いたサイズに固定 */
+        width: calc(13% - 15px) !important;
+        height: auto !important;
+        aspect-ratio: 5 / 8;
+        /* タロットカードの比率を維持 */
+        max-width: 160px;
+        /* 1枚が大きくなりすぎないように制限 */
+        margin: 0 !important;
+        /* gapで調整するためmarginは0にする */
+    }
+}
+
+/* カード1枚のサイズと見た目 */
+.card-unit {
+    width: 65px;
+    height: 100px;
+    margin: 10px 5px 0px 5px !important;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 217, 0, 0.3);
+}
+
+/* 裏面の色 */
+.card-unit.back {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    background-image: url('../tarot/back-of-tarot-card.png') !important;
+    /* 裏面画像があれば */
+    background-size: cover !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.card-unit:hover {
+    transform: translateY(-10px);
+}
+
+/* 結果画面のカード名の色 */
+#result-name {
+    color: gold;
+    margin-bottom: 20px;
+}
+
+.detail-link-text {
+    color: #d8e5ff;
+    transition: color 0.3s ease;
+    /* 色の変化を滑らかにする */
+}
+
+.detail-link-text:hover {
+    color: #ffd700 !important;
+    /* ホバー時にゴールドに変更 */
+    text-decoration: none;
+    /* お好みで下線を消す場合はnoneに */
+}
+
+/* めくられた時のアニメーション */
+.card-unit.flipping {
+    transform: rotateY(180deg) scale(1.1);
+    /* 回転しながら少し大きく */
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 30px gold;
+    /* めくる瞬間に光らせる */
+    z-index: 100;
+}
+
+/* 他のカードが消える時の演出 */
+.card-fade-out {
+    opacity: 0 !important;
+    transform: scale(0.5);
+    transition: all 1.0s ease;
+}
